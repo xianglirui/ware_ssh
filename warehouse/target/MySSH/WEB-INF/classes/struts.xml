@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!-- 修改常量管理struts 中的action的工程，这个常量的使用，必须引入 spring和struts的整合包，不然spring无法管理struts2 Action 中的实体类-->
+    <constant name="struts.objectFactory" value="spring" />
+
+    <package name="json-default" extends="struts-default">
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+        <interceptors>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        </interceptors>
+    </package>
+
+    <package name="default" extends="json-default" namespace="/">
+        <action name="saveUser" class="userAction" method="saveUser">
+<!--            <result name="success">/index.jsp</result>-->
+            <result name="register" type="json">
+                <param name="root">map</param>
+            </result>
+
+        </action>
+        <action name="login" class="userAction" method="login">
+            <!--            <result name="success">/index.jsp</result>-->
+            <result name="login" type="json">
+                <param name="root">map</param>
+            </result>
+
+        </action>
+        <action name="userList" class="userAction" method="userList">
+            <!--            <result name="success">/index.jsp</result>-->
+            <result name="list" type="json">
+                <param name="root">map</param>
+            </result>
+
+        </action>
+
+
+        <action name="userInfo" class="userAction" method="userInfo">
+            <!--            <result name="success">/index.jsp</result>-->
+            <result name="userInfo" type="json">
+                <param name="root">map</param>
+            </result>
+
+        </action>
+
+        <action name="editUser" class="userAction" method="editUser">
+            <!--            <result name="success">/index.jsp</result>-->
+            <result name="updateUser" type="json">
+                <param name="root">map</param>
+            </result>
+
+        </action>
+
+        <action name="deleteUser" class="userAction" method="deleteUser">
+            <!--            <result name="success">/index.jsp</result>-->
+            <result name="deleteUser" type="json">
+                <param name="root">map</param>
+            </result>
+
+        </action>
+
+        <action name="saveInWare" class="InWareAction" method="saveInWare">
+            <result name="success" type="json">
+                <param name="root">map</param>
+            </result>
+
+        </action>
+
+
+
+        <action name="savePurchase" class="purchaseAction" method="savePurchase">
+            <result name="savePurchase" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="findByListByUid" class="purchaseAction" method="findByListByUid">
+            <result name="findByListByUid" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="findPurchaseByList" class="purchaseAction" method="findPurchaseByList">
+            <result name="findPurchaseByList" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="updatePurchaseIfAgree" class="purchaseAction" method="updatePurchaseIfAgree">
+            <result name="updatePurchaseIfAgree" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="updatePurchaseIfRefuse" class="purchaseAction" method="updatePurchaseIfRefuse">
+            <result name="updatePurchaseIfRefuse" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="findInWareByUid" class="InWareAction" method="findInWareByUid">
+            <result name="findInWareByUid" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="findInWare" class="InWareAction" method="findInWare">
+            <result name="findInWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="addInWare" class="InWareAction" method="addInWare">
+            <result name="addInWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="updateInWare" class="InWareAction" method="updateInWare">
+            <result name="updateInWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="deleteInWare" class="InWareAction" method="deleteInWare">
+            <result name="deleteInWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="findOutWareByUid" class="outWareAction" method="findOutWareByUid">
+            <result name="findOutWareByUid" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="findOutWare" class="outWareAction" method="findOutWare">
+            <result name="findOutWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="addOutWare" class="outWareAction" method="addOutWare">
+            <result name="addOutWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="updateOutWare" class="outWareAction" method="updateOutWare">
+            <result name="updateOutWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+
+        <action name="deleteOutWare" class="outWareAction" method="deleteOutWare">
+            <result name="deleteOutWare" type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+    </package>
+
+</struts>

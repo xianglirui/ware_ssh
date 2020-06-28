@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.domain.User" table="user" schema="warehouse_ssh">
+        <id name="id" column="id"/>
+        <property name="nikename" column="nikename"/>
+        <property name="password" column="password"/>
+        <property name="role" column="role"/>
+        <property name="sex" column="sex"/>
+        <property name="tel" column="tel"/>
+        <property name="age" column="age"/>
+        <property name="name" column="name"/>
+        <property name="place" column="place"/>
+    </class>
+</hibernate-mapping>
